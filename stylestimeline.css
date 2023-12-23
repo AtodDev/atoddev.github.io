@@ -1,0 +1,47 @@
+html {
+    min-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+body{
+    background-image: url('icon.jpg');
+    background-size:cover;
+    
+}
+h1,p,h2{
+    
+    font-family: monospace;
+}
+.timelinetext{
+    display: flex;
+    flex-direction: row;
+}
+#timeline1,#timeline3{
+    width: 35%;
+}
+#timeline2{
+    margin-top: 50px;
+}
+p{
+    font-size: 18px;
+}
+.gohome{
+    display: flex;
+    justify-content: center;
+}
+.hometimeline:hover{
+    cursor: pointer;
+    background-color:yellow;
+}
+.hometimeline{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 35px;
+    webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
+}
