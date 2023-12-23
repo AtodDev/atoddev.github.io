@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>AtodDev</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="wholescreen">
+    <!--
+        <div class="topbar"><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/1golMa95a6j3XjT0hj">via GIPHY</a></p>
+            <h1 id="home" onclick="makeElementsClickable(document.getElementById('home'),document.getElementById('faq'),document.getElementById('media'),document.getElementById('facebook'),document.getElementById('instagram'),document.getElementById('tiktok'))">HOME</h1>
+            <h1 id="faq" onclick="makeElementsClickable(document.getElementById('faq'),document.getElementById('home'),document.getElementById('media'),document.getElementById('facebook'),document.getElementById('instagram'),document.getElementById('tiktok'))">FAQ</h1>
+            <h1 id="media" onclick="makeElementsClickable(document.getElementById('media'),document.getElementById('home'),document.getElementById('faq'),document.getElementById('facebook'),document.getElementById('instagram'),document.getElementById('tiktok'))">MEDIA</h1>
+            <div id="socialmediabar"><iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/1golMa95a6j3XjT0hj">via GIPHY</a></p>
+                <img style="height: 35px; width: auto;" id="facebook" src="fbicon.jpg" onclick="makeElementsClickable(document.getElementById('facebook'),document.getElementById('home'),document.getElementById('faq'),document.getElementById('media')),document.getElementById('instagram'),document.getElementById('tiktok')">
+                <img style="height: 35px; width: auto;" id="instagram" src="instaicon.jpg" onclick="makeElementsClickable(document.getElementById('instagram'),document.getElementById('facebook'),document.getElementById('home'),document.getElementById('faq'),document.getElementById('media'),document.getElementById('tiktok'))">
+                <img style="height: 35px; width: auto;" id="tiktok" src="tiktokicon.png" onclick="makeElementsClickable(document.getElementById('tiktok'),document.getElementById('instagram'),document.getElementById('facebook'),document.getElementById('home'),document.getElementById('faq'),document.getElementById('media'))">
+            </div>
+        </div>
+    -->
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <div class="catanimation">
+                <iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="300px" height="150px" style="transform: scaleX(-1); border: 0;"></iframe>
+            </div>
+            <div class="atodscreen">
+                    <img src="https://i.ibb.co/jgCNb42/Whats-App-Image-2023-12-20-at-5-55-57-PM-1.png" alt="atod icon" width="375" height="125">
+                    <br><br><br>
+            </div>
+            <div class="catanimation">
+                <iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="300px" height="150px" style="border: 0;"></iframe>
+            </div>
+        </div>
+        <div class="textabout">
+            <p id="aboutme">Hi, I am <b>Ahmad Arnaoute</b> and since March 2023, I have been running <b>AtodDev</b>, an indie
+                <br>
+                 game development studio making games and other game related things. I am very passionate about
+                <br>
+                coding and the art of game development. This website is showcasing my games and other projects of
+                <br>
+                mine. The most popular game that I have currently made is <a href="https://play.google.com/store/apps/details?id=com.atod.eventhorizonescape&pli=1" target="_blank">RockCat</a> , a survival game about
+                <br>
+                 <b>Rio</b> the astronaut cat trying to stay away from a black hole. You want to contact me? Email me.
+            </p>
+        </div>
+        <div class="links">
+            <p id="myemail" style="font-family: monospace;">atoddevelopers3@gmail.com</p>
+        </div>
+        <div class="helperdivgame">
+            <h1 style=" font-family: monospace; margin-bottom: 10px;" >All Games</h1>
+            <div class="gameshow">
+                <div class="gameshow_2" style="margin-right: 2px;">
+                    <img id="game1" onclick="openRockCat()" src="https://i.ibb.co/Xsy99cT/rockcat.png">
+                    <img id="game2" onclick="openCatWS()" src="https://i.ibb.co/yQ0HDQk/cws.png">
+                </div>
+                <div class="gameshow_3" style="margin-left: 2px;">
+                    <img id="game3" onclick="openRockCatAn()" src="https://i.ibb.co/1K0hk52/rockcatae.png">
+                    <img id="game4" onclick="openFlyingCat()" src="https://i.ibb.co/rsx7V2B/flyingcat.png">
+                </div>
+            </div>
+        </div>
+    <!--
+        <div class="featuresclass">
+            <hr><iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/1golMa95a6j3XjT0hj">via GIPHY</a></p>
+            <h1 style="font-size: 70px;">Features</h1><div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/1golMa95a6j3XjT0hj" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/1golMa95a6j3XjT0hj">via GIPHY</a></p>
+            <p style="color: chocolate;font-size: 30px">Ginger goes on an adventure to save Kitty!</p>
+            <p style="color: cadetblue;font-size: 30px;">Astronaut Rio must avoid the <b>Black Hole</b>!</p>
+            <hr>
+        </div>
+        <div class="platforms">
+            <img id="android" src="android.png" onclick="openPlatform(document.getElementById('android'),document.getElementById('ios'))">
+            <img id="ios" src="ioslogo.png" onclick="openPlatform(document.getElementById('ios'),document.getElementById('android'))">
+        </div>
+    <a href="https://ibb.co/W2nmQ2z"><img src="https://i.ibb.co/yQ0HDQk/cws.png" alt="cws" border="0"></a>
+<a href="https://ibb.co/zJXnzV3"><img src="https://i.ibb.co/rsx7V2B/flyingcat.png" alt="flyingcat" border="0"></a>
+<a href="https://ibb.co/nfwZFvk"><img src="https://i.ibb.co/1K0hk52/rockcatae.png" alt="rockcatae" border="0"></a>
+<a href="https://ibb.co/Z8H33qC"><img src="https://i.ibb.co/Xsy99cT/rockcat.png" alt="rockcat" border="0"></a>
+<a href="https://ibb.co/0h07mJS"><img src="https://i.ibb.co/jgCNb42/Whats-App-Image-2023-12-20-at-5-55-57-PM-1.png" alt="Whats-App-Image-2023-12-20-at-5-55-57-PM-1" border="0"></a>-->
+        
+<div class="container">
+            <div class="bottombar">
+                <h1 id="timeline" onclick="touchTimeline()">Timeline</h1>
+                <h1 id="privacy" onclick="touchPrivacy()">Privacy Policy</h1>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
