@@ -24,7 +24,12 @@
             border-bottom: 1px solid rgba(192, 57, 43, 0.3);
             transition: 0.2s;
         }
-        a:hover { background-color: #c0392b; color: white; border-bottom-color: #c0392b; }
+        
+        a:hover { 
+            background-color: #c0392b; 
+            color: white; 
+            border-bottom-color: #c0392b; 
+        }
         
         .layout {
             max-width: 950px;
@@ -66,7 +71,7 @@
         .btn-cv {
             display: inline-block;
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             padding: 12px 15px;
             background-color: #1a1a1a;
             color: white !important;
@@ -79,20 +84,80 @@
             text-align: center;
             width: 100%;
         }
+        
         .btn-cv:hover {
             background-color: #c0392b;
         }
 
+        .privacy-dropdown {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        
+        .btn-privacy-summary {
+            display: block;
+            padding: 10px 15px;
+            background-color: #e0e0e0;
+            color: #1a1a1a;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            list-style: none;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+        
+        .btn-privacy-summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .btn-privacy-summary:hover {
+            border-color: #1a1a1a;
+        }
+        
+        .privacy-dropdown-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 8px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .privacy-dropdown-content a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #444;
+            border-bottom: none;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .privacy-dropdown-content a:hover {
+            background-color: #f0f0f0;
+            color: #c0392b;
+        }
+
         .tech-stack {
-            margin: 25px 0; padding: 15px 0;
+            margin: 10px 0 25px 0; padding: 15px 0;
             border-top: 2px solid #eee;
             border-bottom: 2px solid #eee;
         }
+        
         .tech-stack h3 {
             font-family: 'Space Mono', monospace;
             font-size: 0.8rem; text-transform: uppercase;
             color: #999; margin-bottom: 10px;
         }
+        
         .tech-stack ul { list-style: none; font-family: 'Space Mono', monospace; font-size: 0.85rem; margin-bottom: 15px;}
         .tech-stack li { margin-bottom: 6px; color: #333; }
         .tech-stack li span { color: #c0392b; font-weight: bold; margin-right: 5px;}
@@ -103,7 +168,6 @@
         }
 
         .content { flex-grow: 1; }
-
         .section-block { margin-bottom: 50px; }
 
         .section-title {
@@ -116,6 +180,7 @@
             letter-spacing: 0.5px;
             color: #1a1a1a;
         }
+        
         .section-intro { margin-bottom: 25px; color: #666; font-size: 0.95rem; font-style: italic; }
         
         .wip-list { list-style: none; }
@@ -126,11 +191,7 @@
         .wip-list p { font-size: 0.95rem; color: #555; margin-top: 8px; line-height: 1.5; }
         
         .play-list { display: flex; flex-direction: column; gap: 25px; }
-
-        .play-item {
-            display: flex; gap: 20px;
-            align-items: flex-start;
-        }
+        .play-item { display: flex; gap: 20px; align-items: flex-start; }
 
         .app-icon {
             width: 60px; height: 60px;
@@ -160,15 +221,65 @@
             margin-bottom: 5px;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+        }
+        
+        .modal:target {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: #fbfbf8;
+            padding: 40px;
+            border: 3px solid #1a1a1a;
+            box-shadow: 8px 8px 0px #1a1a1a;
+            width: 90%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2rem;
+            font-family: 'Space Mono', monospace;
+            color: #1a1a1a;
+            border-bottom: none;
+            line-height: 1;
+        }
+        
+        .modal-close:hover {
+            color: #c0392b; background: transparent;
+        }
+        
+        .modal-header { margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .modal-header h2 { font-family: 'Space Mono', monospace; font-size: 1.2rem; }
+        .modal-header span { font-size: 0.8rem; color: #666; font-family: 'Space Mono', monospace; }
+        
+        .policy-section { margin-bottom: 20px; }
+        .policy-section h4 { font-family: 'Space Mono', monospace; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 5px; }
+        .policy-section p { font-size: 0.9rem; color: #444; line-height: 1.5; }
+        .policy-section ul { list-style: disc; margin-left: 20px; font-size: 0.9rem; color: #444; line-height: 1.5; }
+
         @media (max-width: 700px) {
             .layout { flex-direction: column; gap: 40px; }
             .sidebar { width: 100%; text-align: center; }
             .profile-pic { margin: 0 auto 20px; }
             .tech-stack { text-align: left; display: inline-block; width: 100%; }
             .btn-cv { width: 200px; }
+            .privacy-dropdown { width: 200px; margin: 0 auto 25px auto; }
         }
 
-        /* MINI CATAPULT ANIMATION */
         .mini-catapult {
             position: fixed;
             bottom: 20px;
@@ -179,50 +290,167 @@
             pointer-events: none;
             z-index: 5;
         }
+        
         @keyframes miniArmSwing {
             0%, 20% { transform: rotate(0deg); }
-            25% { transform: rotate(70deg); } /* snap forward */
-            30% { transform: rotate(50deg); } /* recoil */
-            35%, 85% { transform: rotate(60deg); } /* settle */
-            95%, 100% { transform: rotate(0deg); } /* reset */
+            25% { transform: rotate(70deg); }
+            30% { transform: rotate(50deg); }
+            35%, 85% { transform: rotate(60deg); }
+            95%, 100% { transform: rotate(0deg); }
         }
+        
         @keyframes miniRockFly {
             0%, 24% { opacity: 0; transform: translate(0, 0); }
             25% { opacity: 1; transform: translate(0, 0); }
             45% { opacity: 1; transform: translate(-180px, -60px); }
             46%, 100% { opacity: 0; transform: translate(-180px, -60px); }
         }
-        .cat-arm {
-            transform-origin: 80px 90px;
-            animation: miniArmSwing 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cat-rock {
-            animation: miniRockFly 4s infinite linear;
-        }
+        
+        .cat-arm { transform-origin: 80px 90px; animation: miniArmSwing 4s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+        .cat-rock { animation: miniRockFly 4s infinite linear; }
     </style>
 </head>
 <body>
 
     <svg class="mini-catapult" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
         <line x1="20" y1="120" x2="150" y2="120" stroke="#888" stroke-width="2" stroke-dasharray="10 5" />
-        
         <polygon points="60,120 100,120 90,90 70,90" fill="#555" />
         <line x1="80" y1="90" x2="100" y2="120" stroke="#333" stroke-width="3" />
         <circle cx="65" cy="120" r="8" fill="#333" />
         <circle cx="95" cy="120" r="8" fill="#333" />
-
         <g class="cat-arm">
             <line x1="80" y1="90" x2="80" y2="40" stroke="#333" stroke-width="5" stroke-linecap="round" />
             <path d="M 70 40 Q 80 50 90 40" fill="none" stroke="#555" stroke-width="3" />
-            <rect x="70" y="90" width="10" height="15" fill="#555" /> </g>
-        
+            <rect x="70" y="90" width="10" height="15" fill="#555" />
+        </g>
         <circle cx="80" cy="90" r="3" fill="#c0392b" />
-
         <g class="cat-rock">
             <circle cx="80" cy="38" r="4" fill="#222" />
             <path d="M 85 38 L 95 42 L 95 34 Z" fill="#888" opacity="0.5" />
         </g>
     </svg>
+
+    <div id="imeditatii-modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            
+            <div class="modal-header">
+                <h2>iMeditatii Platform</h2>
+                <span>Terms of Service & Privacy Policy (Updated: Nov 1, 2024)</span>
+            </div>
+
+            <div class="policy-section">
+                <h4>1. SYSTEM ACCESS</h4>
+                <p>Acest document reprezintă un acord legal între dumneavoastră (în calitate de utilizator, profesor sau elev) și platforma iMeditatii. Prin crearea unui cont și utilizarea serviciilor noastre, confirmați că ați citit, ați înțeles și acceptați integral acești Termeni și Condiții.</p>
+            </div>
+            <div class="policy-section">
+                <h4>2. PLATFORM STATUS</h4>
+                <p>iMeditatii funcționează exclusiv ca un furnizor de tehnologie și intermediar (marketplace). Noi punem la dispoziție o infrastructură digitală pentru ca elevii și profesorii să poată comunica, partaja resurse și desfășura apeluri video.</p>
+            </div>
+            <div class="policy-section">
+                <h4>3. TRANSACTIONS & SYSTEM RULES</h4>
+                <p>Toate tranzacțiile financiare sunt procesate în mod securizat prin partenerul nostru, Stripe. iMeditatii va reține un comision de administrare și procesare din suma achitată. Încercarea de a ocoli sistemul de plăți al platformei va duce la suspendarea permanentă a conturilor implicate.</p>
+            </div>
+            <div class="policy-section">
+                <h4>4. DATA COLLECTION & USAGE</h4>
+                <p>Când vă creați un cont pe iMeditatii, colectăm informații cu caracter personal precum: numele complet, adresa de email, numărul de telefon și, opțional, fotografia de profil. Datele sunt utilizate exclusiv pentru a asigura buna funcționare a platformei și facilitarea comunicării.</p>
+            </div>
+            <div class="policy-section">
+                <h4>5. SYSTEM SECURITY & THIRD-PARTY</h4>
+                <p>Folosim infrastructura securizată Firebase (operată de Google) pentru stocarea bazei de date. Toate comunicațiile sunt criptate (SSL/TLS). Nu vindem, nu închiriem și nu comercializăm datele dumneavoastră personale. Informațiile sunt partajate doar cu parteneri de încredere esențiali (Stripe, Firebase).</p>
+            </div>
+            <div class="policy-section">
+                <h4>6. USER RIGHTS (GDPR)</h4>
+                <p>Conform GDPR, aveți dreptul de acces, dreptul la rectificare și dreptul la ștergere ("Dreptul de a fi uitat"). Puteți solicita oricând ștergerea permanentă a contului și a datelor asociate contactând suportul platformei.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="atoddev-modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            
+            <div class="modal-header">
+                <h2>AtodDev Games</h2>
+                <span>Confidentiality Policy</span>
+            </div>
+
+            <div class="policy-section">
+                <p>We at AtodDev value your privacy and are committed to protecting your personal information. This confidentiality policy explains how we collect, use, and disclose your personal information in connection with your use of one of our games connected to this policy.</p>
+            </div>
+            <div class="policy-section">
+                <h4>Information We Collect</h4>
+                <p>We collect non-personal information, such as information about your gameplay, including high scores.</p>
+            </div>
+            <div class="policy-section">
+                <h4>How We Use Your Information</h4>
+                <p>We may use the personal information we collect from you to:</p>
+                <ul>
+                    <li>Personalize your experience with the Game</li>
+                    <li>Improve the Game and our services</li>
+                </ul>
+                <p>We may use non-personal information for research and analytics purposes to improve the Game and our services.</p>
+            </div>
+            <div class="policy-section">
+                <h4>Security</h4>
+                <p>We take reasonable measures to protect your personal information from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction. We use industry-standard security measures to protect your personal information.</p>
+            </div>
+            <div class="policy-section">
+                <h4>Data Consent Policy & Children's Privacy</h4>
+                <p>Our app is safe for use by both Kids and Parents. The Game is intended for everyone, but we do not knowingly collect personal information from children under the age of 13. If we learn that we have collected personal information from a child under the age of 13, we will promptly take steps to delete that information.</p>
+            </div>
+            <div class="policy-section">
+                <h4>Changes & Contact Us</h4>
+                <p>We may update this confidentiality policy from time to time. It is your responsability to review this Policy from time to time to ensure that you continue to agree with all of its terms.</p>
+                <p>If you have any questions or concerns about our confidentiality policy, please contact us at atoddevelopers3@gmail.com. By using the Game, you agree to the terms of this confidentiality policy. If you do not agree with the terms of this confidentiality policy, please do not use the Game.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookbook-modal" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            
+            <div class="modal-header">
+                <h2>Pixel Cookbook</h2>
+                <span>Confidentiality Policy (Effective Date: July 11, 2026)</span>
+            </div>
+
+            <div class="policy-section">
+                <h4>1. Purpose and Scope</h4>
+                <p>This Confidentiality Policy defines how AtodDev handles, secures, and protects proprietary information, software code, user data, and developmental assets related to the mobile application Pixel Cookbook. This Policy applies to all internal team members, contractors, open-source contributors, and third-party partners who interact with our development environment or database services.</p>
+            </div>
+            <div class="policy-section">
+                <h4>2. Definition of Confidential Information</h4>
+                <p>Confidential Information includes any non-public data disclosed by us or stored within our project infrastructure, including but not limited to:</p>
+                <ul>
+                    <li>Source Code & Architecture: Proprietary Flutter applications, C++ hardware visual simulation logic, shaders, custom system scripts, or database architecture designs.</li>
+                    <li>Authentication & Credentials: API keys, Firebase configuration payloads, security certificates, encryption keys, and server passwords.</li>
+                    <li>User Data: Personal identifying details, emails, authentication profiles, or custom recipes stored privately.</li>
+                    <li>Business Assets: Unreleased feature roadmaps, pixel-art graphics, audio compositions, and strategic deployment timelines.</li>
+                </ul>
+            </div>
+            <div class="policy-section">
+                <h4>3. Obligations and Safeguards</h4>
+                <p>All individuals granted access to our systems must strictly adhere to the following security principles:</p>
+                <ul>
+                    <li>Access Control: Granted on a strict need-to-know basis.</li>
+                    <li>Credential Hygiene: Must never be committed to public version-control branches.</li>
+                    <li>No Disclosure: Must not be distributed, published, or discussed with external third parties without authorization.</li>
+                    <li>Data Minimization: No personal data shall be pulled unless explicitly required to maintain functionality.</li>
+                </ul>
+            </div>
+            <div class="policy-section">
+                <h4>4. User Data Protection</h4>
+                <p>We treat player and user data with absolute privacy. User-generated content, account settings, and personal emails will be stored securely using Firebase Authentication and Cloud Firestore security rules. We enforce policies that ensure no automated or human tracking monitors private database metrics for non-essential use. User data remains confidential and is never sold, traded, or shared with third-party advertising brokers.</p>
+            </div>
+            <div class="policy-section">
+                <h4>5. Breaches and Enforcement</h4>
+                <p>Any unauthorized distribution, exposure, or leakage of our source files, credentials, or user information constitutes a violation of this Policy. AtodDev reserves the right to immediately terminate access permissions, remove open-source contributor status, and pursue necessary legal or administrative actions to protect our intellectual property and community privacy.</p>
+                <p>For account deletion email us at atoddevelopers3@gmail.com</p>
+            </div>
+        </div>
+    </div>
 
     <div class="layout">
         
@@ -237,7 +465,16 @@
                 </div>
             </div>
 
-            <a href="AhmadMyCV.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">📄 VIEW MY CV</a>
+            <a href="AhmadMyCv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">📄 VIEW MY CV</a>
+
+            <details class="privacy-dropdown">
+                <summary class="btn-privacy-summary">🔒 Privacy Policies</summary>
+                <div class="privacy-dropdown-content">
+                    <a href="#cookbook-modal">> Pixel Cookbook</a>
+                    <a href="#imeditatii-modal">> iMeditatii Platform</a>
+                    <a href="#atoddev-modal">> AtodDev Games</a>
+                </div>
+            </details>
 
             <div class="tech-stack">
                 <h3>Core Stack</h3>
