@@ -190,6 +190,16 @@
         .status { font-family: 'Space Mono', monospace; color: #c0392b; font-size: 0.75rem; margin-left: 8px; vertical-align: middle; border: 1px solid #c0392b; padding: 2px 6px; border-radius: 4px;}
         .wip-list p { font-size: 0.95rem; color: #555; margin-top: 8px; line-height: 1.5; }
         
+        .project-links {
+            margin-top: 6px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+        }
+        .project-links a {
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
         .play-list { display: flex; flex-direction: column; gap: 25px; }
         .play-item { display: flex; gap: 20px; align-items: flex-start; }
 
@@ -413,7 +423,7 @@
             
             <div class="modal-header">
                 <h2>Pixel Cookbook</h2>
-                <span>Confidentiality Policy (Effective Date: July 11, 2026)</span>
+                <span>Confidentiality Policy</span>
             </div>
 
             <div class="policy-section">
@@ -461,7 +471,7 @@
                 <h1>Ahmad Arnaoute</h1>
                 <p class="handle">Computer Science @ UPB</p>
                 <div class="bio-text">
-                    <p>3rd year student. Independent Software Developer building cross-platform apps, low-level systems, and games.</p>
+                    <p>3rd-year CS student & Independent Developer. Building low-level tools, systems, cross-platform apps, and engines.</p>
                 </div>
             </div>
 
@@ -479,17 +489,18 @@
             <div class="tech-stack">
                 <h3>Core Stack</h3>
                 <ul>
-                    <li><span>+</span> Flutter / Dart</li>
                     <li><span>+</span> C / C++ / Rust</li>
-                    <li><span>+</span> Python / Assembly</li>
+                    <li><span>+</span> Flutter / Dart</li>
+                    <li><span>+</span> Python / Node.js</li>
                     <li><span>+</span> Java / Android SDK</li>
-                    <li><span>+</span> Firebase / SQL</li>
+                    <li><span>+</span> Firebase / SQL / Git</li>
                 </ul>
             </div>
 
             <nav class="contact-links">
                 <a href="mailto:ahmadarnaoute1896@gmail.com">Email Me</a>
                 <a href="https://github.com/Ahmad1827" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/ahmad-arnaoute-974465283" target="_blank">LinkedIn</a>
                 <a href="https://atoddev.itch.io/" target="_blank">Itch.io</a>
                 <a href="https://play.google.com/store/apps/dev?id=5485044311410285948&hl=ro" target="_blank">Google Play</a>
             </nav>
@@ -499,28 +510,53 @@
             
             <section class="section-block">
                 <h2 class="section-title">Featured Work</h2>
-                <p class="section-intro">Highlighted projects showcasing full-stack development and systems programming.</p>
+                <p class="section-intro">Core projects spanning full-stack products, graphics engines, Rust systems tooling, and developer automation.</p>
                 
                 <ul class="wip-list">
                     <li>
                         <strong><a href="https://ahmad1827.github.io/" target="_blank">iMeditatii Platform</a></strong>
-                        <span class="status">Live Demo</span>
-                        <p>A full-stack educational marketplace built with Flutter and Firebase. Features real-time database synchronization, secure role-based user authentication, and dynamic UI components.</p>
+                        <span class="status">Full-Stack / Web & Mobile</span>
+                        <p>A full-stack cross-platform educational marketplace built with Flutter and Firebase. Features role-based auth, real-time Firestore synchronization, and dynamic scheduling.</p>
+                        <div class="project-links">
+                            <a href="https://ahmad1827.github.io/" target="_blank">Live Demo ↗</a>
+                            <a href="https://github.com/Ahmad1827/iMeditatii" target="_blank">GitHub ↗</a>
+                        </div>
                     </li>
+
                     <li>
-                        <strong><a href="https://github.com/Ahmad1827" target="_blank">2D Animation Engine</a></strong>
+                        <strong><a href="https://github.com/Ahmad1827/wisdomPark" target="_blank">2D Animation Engine (wisdomPark)</a></strong>
                         <span class="status">C++ / SFML</span>
-                        <p>A comprehensive drawing application featuring a custom frame-based timeline, modular layer system, and lasso selection using ray-casting algorithms.</p>
+                        <p>A multi-layered 2D engine featuring custom frame timeline sequencing, layer blend modes, and a freehand lasso selection tool using ray-casting point-in-polygon checks and 2D affine transformations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmad1827/wisdomPark" target="_blank">GitHub ↗</a>
+                        </div>
                     </li>
+
                     <li>
-                        <strong><a href="https://github.com/Ahmad1827" target="_blank">GitHub PR Bot</a></strong>
-                        <span class="status">Python / API</span>
-                        <p>Automated daemon leveraging the GitHub API to streamline repository workflows, CI/CD pipelines, analyze diffs, and perform intelligent issue triage.</p>
+                        <strong><a href="https://github.com/Ahmad1827/ship" target="_blank">ship -- Binary Packager & Harvester</a></strong>
+                        <span class="status">Rust / Systems</span>
+                        <p>Zero-config CLI build pipeline in Rust that parses PE/ELF import headers via <code>goblin</code> to automatically bundle dynamic libraries (DLLs/SOs), support autonomous cross-compilation, and create single-file executables.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmad1827/ship" target="_blank">GitHub ↗</a>
+                        </div>
                     </li>
+
                     <li>
-                        <strong><a href="https://github.com/Ahmad1827" target="_blank">C to Assembly Translator</a></strong>
-                        <span class="status">Systems</span>
-                        <p>A compiler-style program translating C statements into Assembly instructions, demonstrating low-level architecture understanding and complex parsing logic.</p>
+                        <strong><a href="https://github.com/Ahmad1827/github-pr-bot" target="_blank">AI PR Reviewer & Visualizer Bot</a></strong>
+                        <span class="status">Node.js / Gemini API</span>
+                        <p>An event-driven GitHub App built with Probot and Google Gemini Flash to generate automated risk summaries, group module diffs, and power interactive comment-based @mention triage.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmad1827/github-pr-bot" target="_blank">GitHub ↗</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <strong><a href="https://github.com/Ahmad1827/auto-content-engine" target="_blank">Automated Video Pipeline</a></strong>
+                        <span class="status">Python / FFmpeg</span>
+                        <p>Collaborative media pipeline automating multi-track video composition, subtitles, and dynamic thumbnail synthesis through FFmpeg CLI bindings and asynchronous REST workflows.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmad1827/auto-content-engine" target="_blank">GitHub ↗</a>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -545,7 +581,7 @@
                         <div class="app-info">
                             <h3><a href="https://play.google.com/store/apps/details?id=com.atod.catwordsearch" target="_blank">Word Search</a></h3>
                             <p class="app-desc">Classic word puzzle game engineered with dynamic grid generation algorithms.</p>
-                            <div class="tags"><span>Java</span><span>Algorithms</span></div>
+                            <div class="tags"><span>Java</span><span>Algorithms</span><span>Google Play</span></div>
                         </div>
                     </div>
 
@@ -554,7 +590,7 @@
                         <div class="app-info">
                             <h3><a href="https://atoddev.itch.io/" target="_blank">RockCat</a></h3>
                             <p class="app-desc">Survival and platformer title focusing on engaging gameplay mechanics and user retention.</p>
-                            <div class="tags"><span>Java</span><span>Android SDK</span></div>
+                            <div class="tags"><span>Java</span><span>Android SDK</span><span>itch.io</span></div>
                         </div>
                     </div>
 
@@ -562,8 +598,8 @@
                         <div class="app-icon" style="background-color: #8e44ad;">C++</div>
                         <div class="app-info">
                             <h3><a href="https://atoddev.itch.io/" target="_blank">Sudoku & Snake</a></h3>
-                            <p class="app-desc">Classic logic games built completely from scratch showcasing strong OOP design and raw pointer memory management.</p>
-                            <div class="tags"><span>C++</span><span>SDL2</span><span>OOP</span></div>
+                            <p class="app-desc">Classic arcade and logic games built completely from scratch in raw C++ and SDL2.</p>
+                            <div class="tags"><span>C++</span><span>SDL2</span><span>OOP</span><span>itch.io</span></div>
                         </div>
                     </div>
 
